@@ -15,7 +15,12 @@ NEWSPIDER_MODULE = 'govscrapy.spiders'
 
 DATA_DIR = "E:/data/test/"  #存储数据的根目录
 
-WEBSITE = DATA_DIR + 'website.txt'
+
+B_PATH='bidding_data.xls'
+G_PATH='government_data.xls'
+T_PATH='trade_data.xls'
+A_PATH='website.xls'
+WEBSITE = DATA_DIR + 'website/'
 
 LOG_LEVEL = "WARNING"
 

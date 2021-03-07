@@ -14,4 +14,11 @@ class MyspiderItem(scrapy.Item):
     images = scrapy.Field()
     pdf = scrapy.Field()
     xls = scrapy.Field()
+    # doc = scrapy.Field()
     others = scrapy.Field()
+
+class dataItem(scrapy.Item):
+    urldomain =scrapy.Field()
+    html = scrapy.Field()
+    files = scrapy.Field()
+    types = scrapy.Field()

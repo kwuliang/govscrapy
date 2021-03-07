@@ -1,7 +1,7 @@
 import xlrd
 import hashlib
 import  magic
-
+import re
 
 def getStartUrls(path):
 
@@ -61,11 +61,24 @@ def Encode(urlStr):
     res = m.hexdigest()
     return res
 
-def get_extensions(file):
-    f = magic.Magic(uncompress=True)
-    type = f.from_file(file)
+def get_extensions(url):
+    extens = 'html'
+    if  re.findall('.pdf', url, flags=re.IGNORECASE): #'.PDF' in url or '.pdf' in url:
+        extens = '.pdf'
+    elif  re.findall('.doc', url, flags=re.IGNORECASE): #'.doc' in url or '.DOC' in url:
+        extens = '.doc'
+    elif  re.findall('.docx', url, flags=re.IGNORECASE):#'.docx' in url or '.DOCC' in url:
+        extens = '.docx'
+    elif  re.findall('.xls', url, flags=re.IGNORECASE):#'.xls' in url or '.XLS' in url:
+        extens = '.xls'
+    elif re.findall('.xlsx', url, flags=re.IGNORECASE):#'.xlsx' in url or '.XLSX' in url:
+        extens = '.xlsx'
+    elif re.findall('.png', url, flags=re.IGNORECASE) :
+        extens = '.png'
+    elif re.findall('.jpg', url, flags=re.IGNORECASE):
+        extens = '.jpg'
 
-
-    print(type)
+    return extens
     # return
 
+print(get_extensions('sdfs.jpgsdfsd'))
